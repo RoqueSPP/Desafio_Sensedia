@@ -7,10 +7,10 @@
 ## Passo a passo para o teste automático:
 
 1. Entrar no site:  https://developers.trello.com/docs/api-introduction
-3. Testar se a tela de cadastro de usuário esta aparecendo corretamente
-4. Validar se todos os campos possuem regras para o preenchimento correto de cadastro
-5. Validar o cadastro e a exclusão dos usuários cadastrados
-6. validar a exclusão de um usuário sem a alteração do id
+3. O usuario deve criar uma contaa trello para obter o token de acesso a API
+4. o Usuario deve criar primeiramente um board e assim ter o "idborad"
+5. com o "idboard" o testador irá usá-lo para criar um lista e obter o idlist pra criar o card
+6. com o "idcard", o testador pode fazer alterações no card, como cor do card
 
 ## Sobre a execução do projeto: 
 
@@ -28,3 +28,4 @@
 11. Assim que atualizar, a pasta evidencias vai aparecer com os prints do teste feito
 12. OBS: para não haver sobreosição dos prints das telas, encrementei data e hora para cada teste feito.
 13. assim o ciclo pode ser acompanhado de acordo com a hora da execusção do teste.
+14. executar o testa na sua herarquia: board > list > card. de acordo com as tgs na feature, pela classe "executaAPI" na packager executa.
