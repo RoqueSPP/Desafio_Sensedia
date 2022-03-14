@@ -38,19 +38,18 @@ public class Metodo {
 				System.out.println(response.getBody());
 	}
 	
-	
-	public void UpdateCard(String idcard,String key,String token) throws UnirestException {
-
-		RestAssured
-		.given()
-		.header("Accept", "application/json")
-		.body("{\"color\": \"yellow\",\"idUploadedBackground\":true,\"size\":\"normal\",\"brightness\":\"light\",\"isTemplate\": false}")
-		.when()
-		.post("https://api.trello.com/1/cards/"+idcard+"/actions/comments?text=roque"+key+token)
-		.then()
-		;
+	public void UpdateCard(String idcard,String key,String token) throws UnirestException{
 		
-	}
+		HttpResponse<JsonNode> response = Unirest.put("https://api.trello.com/1/cards/"+idcard+key+token)
+				.header("Accept", "application/json")
+				.queryString("idAttachment" , idcard)
+				.queryString("color" ,"yellow")
+				.queryString("size" ,"normal")
+				.queryString( "brightness", "blue")
+				.queryString("isTemplate", false)
+				  .asJson();
+
+				System.out.println(response.getBody());
 		
 		
 	public void DeliteBoard(String idboard, String key, String token) throws UnirestException {
